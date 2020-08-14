@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/myAccount.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>All Products</title>
+  </head>
+  <body>
+
+  <div class="container">
+      <div class="navbar">
+          <div class="logo">
+            <img src="images/logo.png" alt="logo" width="125px">
+          </div>
+          <nav>
+            <ul id="menuItems">
+              <% for(var i=0; i < navLinks.length; i++) { %>
+                <li><a href="<%= navLinks[i] %>"><%= navLinkLabel[i] %></a></li>
+              <% } %>
+            </ul>
+          </nav>
+          <img src="images/cart.png" alt="cart" width="30px" height="30px">
+          <img src="images/menu.png" alt="cart" onclick="menuToggle()" class="menu-icon">
+        </div>
+      </div>
+
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+          <form action="" method="post">
+					<table>
+						<tbody>
+                <% for(var i=0; i < label.length; i++) { %>
+                  <tr>
+                  <td><%= label[i]%></td>
+                  <!-- <td><%= data[i] %></td> -->
+                  <td><input type="text" name="num<%=i%>" value="<%= data[i] %>" readonly></td>
+                 </tr>
+                <% } %>
+                <tr>
+                  <td>Status</td>
+                  <td>
+                  <select name="status">
+                    <option value="pending">Pending</option>
+                    <option value="paid">Paid</option>
+                    <option value="delivered">Delivered</option>
+                  </select>
+                  </td>
+                </tr>
+                <tr>
+									<td></td>
+                  <td><input type="submit" name="" value="Update Information" style="background: #ff523b; border-radius:40px; color:white;"></td>
+                  <td></td>
+                </tr>
+						</tbody>
+					</table>
+          </form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

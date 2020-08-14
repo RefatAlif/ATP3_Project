@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/table.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>All Products</title>
+  </head>
+  <body>
+
+  <div class="container">
+      <div class="navbar">
+          <div class="logo">
+            <img src="images/logo.png" alt="logo" width="125px">
+          </div>
+          <nav>
+            <ul id="menuItems">
+              <% for(var i=0; i < navLinks.length; i++) { %>
+                <li><a href="<%= navLinks[i] %>"><%= navLinkLabel[i] %></a></li>
+              <% } %>
+            </ul>
+          </nav>
+          <img src="images/cart.png" alt="cart" width="30px" height="30px">
+          <img src="images/menu.png" alt="cart" onclick="menuToggle()" class="menu-icon">
+        </div>
+      </div>
+
+<!-- --------report-------- -->
+<center><label id="label"><%=msg%></label></center>
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+                <% for(var i=0; i < hdata.length; i++) { %>
+                   <th><%= hdata[i] %></th>
+                <% } %>
+							</tr>
+						</thead>
+						<tbody>
+              <!-- <% for(var i=0; i < rows.length; i++) { %>
+                <tr>
+                 <td><%= rows[i].username %></td>
+                 <td><%= rows[i].password %></td>
+                 <td><%= rows[i].usertype %></td>
+                 <td><a href="/Report/user/edit?uid=<%= rows[i].id %>">Edit</a></td>
+                 <td><a href="/Report/user/edit?uid=<%= rows[i].id %>">Delete</a></td>
+                </tr>
+              <% } %> -->
+              <% for(var i=0; i < rows.length; i++) { %>
+                <tr>
+                <% for(var j=0; j < rows[i].length-1; j++) { %>
+                   <td><%= rows[i][j] %></td>
+                <% } %>
+                <% for(var k=0; k < links.length; k++) { %>
+                <td><a href="<%= links[k] %><%= rows[i][j] %>"><%=linkName[k]%></a></td>
+                <% } %>
+               </tr>
+              <% } %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

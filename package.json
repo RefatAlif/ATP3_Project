@@ -1,0 +1,38 @@
+{
+  "name": "atp3_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "dom-parser": "^0.1.6",
+    "ejs": "^3.1.3",
+    "exec-php": "0.0.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "fs": "0.0.1-security",
+    "mysql": "^2.18.1",
+    "node-web-scrape": "0.0.1",
+    "nodemon": "^2.0.4",
+    "puppeteer": "^5.2.1",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asiqur-rahman/ATP3_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asiqur-rahman/ATP3_Project/issues"
+  },
+  "engine": {
+    "node": "12.16.0"
+  },
+  "homepage": "https://github.com/asiqur-rahman/ATP3_Project#readme"
+}
